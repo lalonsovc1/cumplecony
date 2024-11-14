@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Feliz Cumpleaños, Cony! 🎉</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="message-container">
+        <h1>🎈 ¡Feliz Cumpleaños, Cony! 🎈</h1>
+        <p>Hoy celebramos un día increíble, ¡el tuyo! 🍻 Quiero agradecerte de todo corazón por todo lo que haces por mí. Cada momento que hemos compartido, cada risa y todos esos consejos que siempre has tenido para mí. Gracias por estar ahí, siempre sacándome una sonrisa, y por ser esa persona con la que puedo contar en cualquier momento.</p>
+        <p>Tu amistad significa mucho, y no hay nada como disfrutar de tus ocurrencias y tu buena onda. Siempre has estado ahí para darme energía positiva, y por todo eso te agradezco. ¡Hoy es tu día y espero que disfrutes al máximo! 🎉</p>
+        <p>Y ya sabes, no olvides que el 2025 tienes que venir a hacer una reunión por aquí, ¡porque ya estamos esperando esa reu! 🎊 Vamos a celebrar a lo grande, como solo tú sabes hacerlo. ¡Que los cumplas muy feliz, Cony, y que este año sigamos sumando momentos juntos!</p>
+      </div>
+
+  <script>
+    // Genera confeti constante y abundante
+    function launchConfetti() {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      document.body.appendChild(confetti);
+
+      // Remueve el confeti después de 5 segundos
+      setTimeout(() => confetti.remove(), 5000);
+    }
+
+    // Genera confeti constantemente
+    setInterval(launchConfetti, 100); // Confeti más abundante cada 100ms
+  </script>
+</body>
+</html>

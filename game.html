@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Mini Juego de Puntería!</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>¡Midamos ese AIM de nuv!</h1>
+    <h2>¡Atrapa los objetivos!</h2>
+    <p>Puntaje: <span id="score">0</span>/15</p>
+    <div id="target" class="target hidden"></div>
+  </div>
+
+  <script>
+    let score = 0;
+    const scoreElement = document.getElementById('score');
+    const target = document.getElementById('target');
+
+    // Genera una posición aleatoria para el objetivo y lo muestra
+    function showTarget() {
+      const container = document.querySelector('.game-container');
+      const maxX = container.clientWidth - target.offsetWidth;
+      const maxY = container.clientHeight - target.offsetHeight;
+      const x = Math.floor(Math.random() * maxX);
+      const y = Math.floor(Math.random() * maxY);
+
+      target.style.left = `${x}px`;
+      target.style.top = `${y}px`;
+      target.classList.remove('hidden');  // Muestra el objetivo
+
+      // Oculta el objetivo después de un tiempo aleatorio
+      setTimeout(() => {
+        target.classList.add('hidden');
+      }, 4000); // Aparece por 500 ms
+    }
+
+    // Función para iniciar el juego y mostrar el objetivo de forma intermitente
+    function startGame() {
+      showTarget();
+
+      setInterval(() => {
+        if (target.classList.contains('hidden')) {
+          showTarget();
+        }
+      }, Math.floor(Math.random() * 1000) + 500); // Intervalo aleatorio entre 500 ms y 1.5 s
+    }
+
+    // Incrementa el puntaje y verifica si se alcanzó el objetivo
+    target.addEventListener('click', () => {
+      score++;
+      scoreElement.innerText = score;
+
+      // Oculta el objetivo inmediatamente después de clic
+      target.classList.add('hidden');
+
+      if (score >= 15) {
+        // Redirige a la página de la sorpresa
+        window.location.href = 'secret.html';
+      }
+    });
+
+    // Inicia el juego al cargar la página
+    window.onload = startGame;
+  </script>
+</body>
+</html>

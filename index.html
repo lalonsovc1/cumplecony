@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Feliz Cumpleaños, Cony!</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Enlace a la librería de confeti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+ <center> <div class="container">
+    <h1>🎉 ¡Feliz Cumpleaños, Cony! 🎉</h1>
+    <img src="cony.png" alt="Foto de Cony" class="profile-pic">
+    <p>Hoy es tu día, ¡y te tengo algo especial!😉 <br>Pero primero debes responder algo.</p>
+
+    <!-- Botón inicial para mostrar opciones -->
+    <button onclick="showOptions()" id="yesButton">Responder 😎</button>
+
+    <!-- Opciones de Sí y No -->
+    <div id="options" class="hidden">
+    <h1>🎉 ¿Eres joto? 🎉</h1>
+      <button onclick="goToGame()" id="yesButton">Sí 😎</button>
+      <button onmouseover="moveNoButton()" id="noButton">No 🙄</button>
+    </div>
+
+    <!-- Botón de Felicitaciones -->
+    <button onclick="sendCongrats()" id="congratsButton">Felicitaciones 🎈</button>
+    <p id="congratsCount">Felicitaciones: 0</p>
+  </div></center>
+
+  <script src="script.js"></script>
+</body>
+</html>
